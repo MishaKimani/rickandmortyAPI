@@ -14,8 +14,14 @@ async function fetchData(){
                             Species:${character.species}
                             Gender:${character.gender}
                             Origin:${character.origin.name}
+                            <a class="link">View Character Details</a>
                             `
-    
+        const link=container.querySelector('.link')
+        link.addEventListener('click',()=>{
+            localStorage.setItem('person', JSON.stringify(character))
+            window.open('character.html','_blank')
+        })
+
         charsection.appendChild(container)   
         
     });
